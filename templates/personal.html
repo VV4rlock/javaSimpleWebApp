@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal page</title>
+</head>
+    <body>
+        <h2>Welcome, ${user.getLogin()}!This is your personal page.</h2>
+        <a href="/main">Main</a><br>
+        <h4>Your purse: ${user.getPurse()}</h4>
+        <br>
+        <h4>Your lots:</h4>
+        <table>
+            <tr>
+                <td>Id</td><td>Name</td><td>price</td><td>DateOfEnd</td>
+            </tr>
+            <#list activeLots as l>
+                <tr>
+                    <td>${l.getId()}</td><td><a href="/lot?id=${l.getId()}">${l.getName()}</a></td><td>${l.getLastPrice()}</td><td>${l.getEndTime()}</td><td><a href="/delete?id=${l.getId()}">delete lot</a></td>
+                </tr>
+            </#list>
+        </table>
+        <br>
+        <h4>Complited:</h4>
+        <table>
+            <tr>
+                <td>Id</td><td>Name</td><td>price</td><td>DateOfEnd</td><td>bill</td>
+            </tr>
+        <#list complitedLots as l>
+            <tr>
+                <td>${l.getId()}</td><td><a href="/lot?id=${l.getId()}">${l.getName()}</a></td><td>${l.getLastPrice()}</td><td>${l.getEndTime()}</td><td><a href="/bill?id=${l.getId()}">bill</a></td>
+            </tr>
+        </#list>
+        </table>
+    </body>
+</html>

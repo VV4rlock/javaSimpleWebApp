@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lot ${lot.getName()}</title>
+</head>
+<body>
+    <a href="/main">Main</a><br>
+    <br>
+    <br>
+    <h1>Lot ${lot.getId()}</h1>
+    <h2>Name: ${lot.getName()}</h2>
+    <h3>Price: ${lot.getLastPrice()}</h3>
+    <h3>Date of the End: ${lot.getEndTime()}</h3>
+    <h3>Description: ${lot.getDescription()}</h3>
+    <h3>Last buyer: ${lot.getLoginOfLastRate()}</h3>
+    <form action="/lot?id=${lot.getId()}" method="POST">
+        Your Price: <input type="number" name="price"/><br>
+        <input type="submit" value="raise"><br>
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Information exchange</title>
+</head>
+<body>
+    <p><h2>Information exchange</h2></p>
+    <p>
+    <h4>Welcome, ${user}! <a href="/personal">Personal Page</a>  |  <a href="/createLot">Create Lot</a>  |  <a href="/logout">Logout</a></h4>
+    </p>
+    <br>
+    <br>
+    <p>
+        <h3>Lots:</h3>
+    <table>
+        <tr>
+            <td>Id</td><td>Name</td><td>price</td><td>Date of the end</td>
+        </tr>
+        <#list lots as l>
+            <tr>
+                <td>${l.getId()}</td><td><a href="/lot?id=${l.getId()}">${l.getName()}</a></td><td>${l.getLastPrice()}</td><td>${l.getEndTime()}</td>
+            </tr>
+        </#list>
+    </table>
+    </p>
+
+</body>
+</html>
